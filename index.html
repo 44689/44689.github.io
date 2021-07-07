@@ -14,12 +14,8 @@
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
 function isQQ() {
-          var ua = navigator.userAgent.toLocaleLowerCase(); 
-          if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) { 
-            return true;
-        } else {
-          return false;
-        }
+  var ua = navigator.userAgent.toLowerCase();
+ return !!ua.match(/mqqbrowser|qzone|qqbrowser/i);
 }
 function qr() {
   var content = document.getElementById("content").value;
