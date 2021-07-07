@@ -13,6 +13,14 @@
   <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <script>
+function isQQ() {
+          var ua = navigator.userAgent.toLocaleLowerCase(); 
+          if (ua.match(/tencenttraveler/) != null || ua.match(/qqbrowse/) != null) { 
+            return true;
+        } else {
+          return false;
+        }
+}
 function qr() {
   var content = document.getElementById("content").value;
   if(content != "") {
@@ -20,10 +28,19 @@ function qr() {
     var qrpng = document.getElementById("qrpng");
     qrpng.style.display="inline";
     document.getElementById("dbt").style.display="inline";
-    document.getElementById("down").href = url;
+    if(isQQ == true) {
+      document.getElementById("down").href = "#";
+    } else if(isQQ == false) {
+      document.getElementById("down").href = url;
+    }
     qrpng.src = url; 
   } else {
     window.alert("你还没有输入内容");
+  }
+}
+function down() {
+  if(isQQ() == true) {
+    window.alert("QQ浏览器不支持下载文件，请用其他浏览器打开");
   }
 }
 </script>
@@ -43,7 +60,7 @@ function qr() {
 <input id="content" type="text" class="form-control" placeholder="请输入内容"><br>
 <center>
 <button onClick="qr()" type="button" class="btn btn-primary">生成二维码</button>
-<a id="down" href="#"><button type="button" id="dbt" class="btn btn-primary" style="display:none;">下载二维码</button></a>
+<a id="down" href="#"><button onClick="down()" type="button" id="dbt" class="btn btn-primary" style="display:none;">下载二维码</button></a>
 </center>
 </div>
 </form>
