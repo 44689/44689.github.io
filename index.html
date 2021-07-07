@@ -1,0 +1,54 @@
+
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>免费QR码生成器</title>
+<meta name="keywords" content="QR码生成,免费,在线QR码生成,在线二维码生成,二维码生成,免费生成,怎么生成二维码,怎么生成QR码">
+<meta name="description" content="免费QR码在线生成器">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.9">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://css.letvcdn.com/lc04_yinyue/201612/19/20/00/bootstrap.min.css">
+  <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+function qr() {
+  var content = document.getElementById("content").value;
+  if(content != "") {
+    var url = "http://net.ccbtv.top/qr/api.php?download=yes&qr="+content;
+    var qrpng = document.getElementById("qrpng");
+    qrpng.style.display="inline";
+    document.getElementById("dbt").style.display="inline";
+    document.getElementById("down").href = url;
+    qrpng.src = url; 
+  } else {
+    window.alert("你还没有输入内容");
+  }
+}
+</script>
+</head>
+<body>
+<div class="col-xs-12 col-sm-10 col-lg-8 center-block" style="float: none;">
+<div class="panel panel-primary">
+<div class="panel-heading" style="background: linear-gradient(to right,#8ae68a,#5ccdde,#b221ff);"><center><font color="#000000"><b>免费QR码生成网</b></font></center></div>
+<div class="panel-body">
+<center><div class="alert alert-success"><a href="#"><img class="img-circle m-b-xs" style="border: 2px solid #1281FF; margin-left:3px; margin-right:3px;" src="http://q2.qlogo.cn/headimg_dl?dst_uin=3507637224&spec=5"; width="60px" height="60px" alt="免费QR码生成网"><br></a>免费二维码生成器，大家可以免费使用我的<a class="btn-link text-primary" href="./api/index.html">API</a></div></center>
+
+<div class="content1">
+<div class="hide_box" style="display: none;"></div>
+<form role="form">
+<div class="form-group">
+<label for="name">请输入要转换的文本/链接</label>
+<input id="content" type="text" class="form-control" placeholder="请输入内容"><br>
+<center>
+<button onClick="qr()" type="button" class="btn btn-primary">生成二维码</button>
+<a id="down" href="#"><button type="button" id="dbt" class="btn btn-primary" style="display:none;">下载二维码</button></a>
+</center>
+</div>
+</form>
+<center><img id="qrpng" class="img-thumbnail" src="#" alt="QR码" onerror="this.style.display='none'; this.onerror=null"></center>
+</div>
+<p style="text-align:center">&copy; Powered by <a href="#">PeterCoast</a></p>
+</body>
+</html>
