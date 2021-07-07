@@ -28,9 +28,9 @@ function qr() {
     var qrpng = document.getElementById("qrpng");
     qrpng.style.display="inline";
     document.getElementById("dbt").style.display="inline";
-    if(isQQ == true) {
+    if(isQQ() == true) {
       document.getElementById("down").href = "#";
-    } else if(isQQ == false) {
+    } else if(isQQ() == false) {
       document.getElementById("down").href = url;
     }
     qrpng.src = url; 
