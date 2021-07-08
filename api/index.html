@@ -1,2 +1,129 @@
-<p>http://net.ccbtv.top/qr/api.php?qr=
-还没写文档，自己调用</p>
+<!DOCTYPE html>
+<html lang="zh-cn">
+    
+    <head>
+        <title>
+            免费QR码生成网 - API文档
+        </title>
+        <meta name="keywords" content="QR码生成,免费,在线QR码生成,在线二维码生成,二维码生成,免费生成,怎么生成二维码,怎么生成QR码">
+        <meta name="description" content="免费QR码在线生成器">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js">
+        </script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+    </head>
+    
+    <body>
+     <nav class="navbar navbar-default" role="navigation">    
+     <div class="container-fluid"> 
+     <div class="navbar-header">
+         <a class="navbar-brand" href="#">API文档</a>
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#haha">
+             <span class="sr-only">切换导航</span>
+            <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+         </button>
+    </div>
+     <div class="collapse navbar-collapse" id="haha">
+         <ul class="nav navbar-nav">
+             <li><a href="../index.html">首页</a></li>
+             <li class="active"><a href="#">API</a></li>
+         </ul>
+     </div>
+    </div>
+</nav>
+
+        <div class="col-xs-12 col-sm-10 col-lg-8 center-block" style="float: none;">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <b>
+                        API文档
+                    </b>
+                </div>
+                <div class="panel-body">
+                <p>请求链接：</p>
+                <pre>http://net.ccbtv.top/qr/api.php<button onclick="Copy()" class="btn btn-default btn-xs pull-right">复制</button></pre>
+                <textarea id="link" style="position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;">http://net.ccbtv.top/qr/api.php</textarea>
+                <p>请求方式：GET</p>
+                <p><b>url</b>参数：</p>
+                <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>参数名</th>
+                        <th>类型</th>
+                        <th>内容</th>
+                        <th>必要性</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>qr</td>
+                        <td>str</td>
+                        <td>转换的内容</td>
+                        <td>必要</td>
+                        <td>内容填包含http://或https://的二维码可直接跳转链接</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                    <td>download</td>
+                     <td>str</td>
+                      <td>yes</td>
+                       <td>可选</td>
+                       <td>如果要这个参数，则会跳出下载二维码，如果没有，就正常显示二维码</td>
+                  </tr>
+                </tbody>
+            </table>
+            <p>返回内容：</p>
+                <table class="table table-bordered text-center">
+                <thead>
+                    <tr>
+                        <th>返回类型</th>
+                        <th>返回内容</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>img</td>
+                        <td>返回一个二维码图片</td>
+                        <td>如果没选择download参数，则返回这条内容</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                  <tr>
+                     <td>att</td>
+                      <td>返回一个下载链接</td>
+                       <td>如果选择了download参数，则返回这条内容</td>
+                  </tr>
+                </tbody>
+            </table>
+                </div>
+                <div class="panel-footer">
+                    <p style="text-align:center">
+                        &copy; Powered by
+                        <a href="https://github.com/PeterCoast" target="_blank">
+                            PeterCoast
+                        </a>
+                    </p>
+                </div>
+                </div>
+                </div>
+                </body>
+                <script>
+                function Copy() {
+            var input = document.getElementById("link");
+
+            input.select();
+
+            document.execCommand("copy");
+            alert("复制成功！");
+
+        }
+                </script>
+                </html>
