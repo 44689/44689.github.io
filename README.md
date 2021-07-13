@@ -1,3 +1,3 @@
 # petercoast.github.io
 Qr码生成器
-[链接](https://PeterCoast.github.io)
+<a href="https://PeterCoast.github.io" target="_blank">链接</a>
